@@ -1,0 +1,12 @@
+body {
+    text-align: center;
+    font-size: large;
+    background-color: red;
+}
+body ul {
+    list-style-position: inside;
+}
+
+body ul button {
+    background-color: blue;
+}
