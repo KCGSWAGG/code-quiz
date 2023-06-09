@@ -13,4 +13,14 @@ document.addEventListener("DOMContentLoaded", function () {
       currentQuestion++;
       showNextQuestion();
     }
-  
+   // Function to display the next question or final score
+   function showNextQuestion() {
+    if (currentQuestion < correctAnswers.length) {
+      const questionSections = document.querySelectorAll("section");
+      questionSections.forEach(function (section, index) {
+        section.style.display = index === currentQuestion ? "block" : "none";
+      });
+    } else {
+      showFinalScore();
+    }
+  }
