@@ -24,3 +24,25 @@ document.addEventListener("DOMContentLoaded", function () {
       showFinalScore();
     }
   }
+
+  // Function to display the final score
+  function showFinalScore() {
+    const quizContainer = document.querySelector("body");
+    quizContainer.innerHTML = `
+      <h1>Quiz Completed!</h1>
+      <p>Your score: ${score}/${correctAnswers.length}</p>
+    `;
+  }
+
+  // Add event listeners to the answer buttons
+  const answerButtons = document.querySelectorAll("button");
+  answerButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      const selectedAnswer = this.textContent;
+      checkAnswer(selectedAnswer);
+    });
+  });
+
+  // Show the first question
+  showNextQuestion();
+});
